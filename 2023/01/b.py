@@ -2,7 +2,7 @@
 
 import re
 
-pattern = re.compile("(one|two|three|four|five|six|seven|eight|nine|\d)")
+pattern = re.compile(r"(?=(one|two|three|four|five|six|seven|eight|nine|\d))")
 
 f = open("inputa.txt", "r")
 #f = open("testinput.txt", "r")
@@ -14,7 +14,6 @@ sum = 0
 
 for line in d:
     m = pattern.findall(line)
-    print(m)
     if len(m) == 0:
         print("###########\nLine is {}###########".format(line))
         continue
