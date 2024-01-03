@@ -24,12 +24,12 @@ def find_val(d):
 
     for i in range(len(d)-1, -1, -1):
         if i == len(d)-1:
-            d[i].append(0)
+            d[i].insert(0, 0)
         else:
-            d[i].append(d[i][-1] + d[i+1][-1])
+            d[i].insert(0, d[i][0] - d[i+1][0])
     for line in d:
         print(line)
-    return d[0][-1]
+    return d[0][0]
 
 pattern = re.compile("^\D*(\d)")
 
